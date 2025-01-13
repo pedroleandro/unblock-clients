@@ -5,8 +5,14 @@ import logging
 
 load_dotenv()
 
+log_file = 'app.log'
+
+if not os.path.exists(log_file):
+    with open(log_file, 'w'):
+        pass
+
 logging.basicConfig(
-    filename='app.log',
+    filename=log_file,
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'

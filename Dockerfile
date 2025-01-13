@@ -11,6 +11,7 @@ RUN wget https://download.oracle.com/otn_software/linux/instantclient/instantcli
     ldconfig
 
 WORKDIR /app
+RUN mkdir -p /app && chmod -R 777 /app
 
 COPY requirements.txt .
 COPY . .
